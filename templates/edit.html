@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Редактировать запись</h1>
+<form action="/edit/{{ req._id }}" method="POST" id="edit_form">
+    <div>
+        <label for="surname">Фамилия:</label>
+        <input type="text" id="surname" name="surname" value="{{ req.surname }}" required>
+    </div>
+    <div>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" value="{{ req.name }}" required>
+    </div>
+    <div>
+        <label for="fathername">Отчество:</label>
+        <input type="text" id="fathername" name="fathername" value="{{ req.fathername }}" required>
+    </div>
+
+    <div>
+        <label for="phone_number">Телефон:</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ req.contact_phone }}" required>
+    </div>
+    <div>
+        <label for="office">Офис:</label>
+        <select id="office" name="office" required>
+            {% for office in offices %}
+                <option value="{{ office.Office }}"
+                        {% if office.Office == req.office %} selected {% endif %}>
+                    {{ office.Office }} </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" value="{{ req.date }}" required><br>
+    </div>
+    <div>
+        <label for="time">Время:</label>
+        <input type="text" id="time" name="time" value="{{ req.time }}" required><br>
+    </div>
+    <div>
+        <label for="status">Статус</label>
+        <select id="status" name="status">
+            <option value="Новый" {% if req.status == 'Новый' %}selected{% endif %}>Новый</option>
+            <option value="Прошла" {% if req.status == 'Прошла' %}selected{% endif %}>Прошла</option>
+            <option value="Не прошла" {% if req.status == 'Не прошла' %}selected{% endif %}>Не прошла</option>
+        </select>
+    </div>
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header>
+    <img src="./" alt="">
+    <span>Фора-Банк</span>
+</header>
+<main>
+    <form action="/add" class="add-form" method="post">
+        <div>
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname">
+        </div>
+        <div>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="fathername">Отчество:</label>
+            <input type="text" id="fathername" name="fathername">
+        </div>
+        <div>
+            <label for="phone_number">Телефон:</label>
+            <input type="text" id="phone_number" name="phone_number">
+        </div>
+        <div>
+            <label for="office">Офис:</label>
+            <select id="office" name="office">
+                {% for office in offices %}
+                    <option value="{{ office.Office }}">{{ office.Office }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div>
+            <label for="time">Время:</label>
+            <select id="time" name="time"></select>
+        </div>
+        <div>
+            <label for="status">Статус:</label>
+            <input type="text" id="status" name="status" disabled value="Новый">
+        </div>
+        <input type="submit" value="Добавить" class="add-btn">
+    </form>
+
+    <table>
+        <tr>
+            <td>Фамилия</td>
+            <td>Имя</td>
+            <td>Отчество</td>
+            <td>Контакт</td>
+            <td>Офис</td>
+            <td>Дата</td>
+            <td>Время</td>
+            <td>Статус</td>
+            <td></td>
+        </tr>
+        {% for request in requests %}
+            <tr class="req-{{ request._id }}">
+                <td>{{ request.surname }}</td>
+                <td>{{ request.name }}</td>
+                <td>{{ request.fathername }}</td>
+                <td>{{ request.contact_phone }}</td>
+                <td>{{ request.office }}</td>
+                <td>{{ request.date|format_date }}</td>
+                <td>{{ request.time }}</td>
+                <td class="status-cell">
+                    <label>
+                        <input type="radio" class="status-radio new"
+                               name="{{ request._id }}"
+                               checked
+                               value="Новый">
+                        {{ request.status }}
+                    </label><br>
+                    <label>
+                        <input type="radio" class="status-radio ok" name="{{ request._id }}" value="Прошла">
+                        Прошла
+                    </label><br>
+                    <label>
+                        <input type="radio" class="status-radio no-ok" name="{{ request._id }}" value="Не прошла">
+                        Не прошла
+                    </label>
+                </td>
+                <td><a href="/edit/{{ request._id }}"><img src="../static/img/pencil.png" alt="" class="edit-btn"></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</main>
+<script src="../static/main.js"></script>
+</body>
+</html>

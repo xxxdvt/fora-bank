@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&family=Rubik+Mono+One&display=swap');
+
+* {
+    font-family: Montserrat, serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+header {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 64px;
+    height: 64px;
+}
+
+header span {
+    width: 90%;
+    font-size: 40px;
+    text-align: center;
+}
+
+.add-form {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+.add-form {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.add-form div {
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+}
+
+.add-form input, select {
+    width: 200px;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.add-form input[type='submit'] {
+    width: 320px;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+main table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2%;
+}
+
+main table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.edit-btn {
+    width: 12px;
+    height: 12px;
+}
+
+.status-cell {
+    text-align: justify;
+    margin: 0;
+}
