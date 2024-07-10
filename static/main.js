@@ -1,9 +1,24 @@
+document.querySelector('.open-form').addEventListener('click', () => {
+   document.querySelector('.form--form').classList.remove('hidden');
+});
+
+const closeForm = () => {
+   document.querySelector('.form--form').classList.add('hidden');
+};
+
+document.querySelector('.close-form').addEventListener('click', closeForm);
+document.querySelector('.add-btn').addEventListener('click', closeForm);
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const officeSelect = document.getElementById('office');
     const dateInput = document.getElementById('date');
     const timeSelect = document.getElementById('time');
     let officeHours = {};
 
+    updateAvailableDates();
+    updateAvailableTimes();
     officeSelect.addEventListener('change', updateAvailableDates);
     dateInput.addEventListener('change', updateAvailableTimes);
 

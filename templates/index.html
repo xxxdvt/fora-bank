@@ -9,52 +9,63 @@
 </head>
 <body>
 <header>
-    <img src="./" alt="">
-    <span>Фора-Банк</span>
+    <img src="../static/img/header-logo.svg" alt="" width="200px">
+    <div class="buttons">
+        <button class="open-form"><img src="../static/img/add.png" alt="" style="cursor: pointer;"></button>
+        <button class="to-excel"><img src="../static/img/export.png" alt="" style="cursor: pointer;"></button>
+    </div>
 </header>
-<main>
-    <form action="/add" class="add-form" method="post">
-        <div>
-            <label for="surname">Фамилия:</label>
-            <input type="text" id="surname" name="surname">
-        </div>
-        <div>
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name">
-        </div>
-        <div>
-            <label for="fathername">Отчество:</label>
-            <input type="text" id="fathername" name="fathername">
-        </div>
-        <div>
-            <label for="phone_number">Телефон:</label>
-            <input type="text" id="phone_number" name="phone_number">
-        </div>
-        <div>
-            <label for="office">Офис:</label>
-            <select id="office" name="office">
-                {% for office in offices %}
-                    <option value="{{ office.Office }}">{{ office.Office }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <label for="date">Дата:</label>
-            <input type="date" id="date" name="date">
-        </div>
-        <div>
-            <label for="time">Время:</label>
-            <select id="time" name="time"></select>
-        </div>
-        <div>
-            <label for="status">Статус:</label>
-            <input type="text" id="status" name="status" disabled value="Новый">
-        </div>
-        <input type="submit" value="Добавить" class="add-btn">
-    </form>
 
+<main>
+    <div class="form--form hidden">
+        <div class="form-form">
+            <div class="form-header">
+                <p>Добавить запись</p>
+                <button><img src="../static/img/close.png" alt="X" class="close-form" style="cursor: pointer;"></button>
+            </div>
+            <form action="/add" class="add-form" method="post">
+                <div>
+                    <label for="surname">Фамилия:</label>
+                    <input type="text" id="surname" name="surname">
+                </div>
+                <div>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="fathername">Отчество:</label>
+                    <input type="text" id="fathername" name="fathername">
+                </div>
+                <div>
+                    <label for="phone_number">Телефон:</label>
+                    <input type="text" id="phone_number" name="phone_number">
+                </div>
+                <div>
+                    <label for="office">Офис:</label>
+                    <select id="office" name="office">
+                        {% for office in offices %}
+                            <option value="{{ office.Office }}">{{ office.Office }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="date">Дата:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div>
+                    <label for="time">Время:</label>
+                    <select id="time" name="time"></select>
+                </div>
+                <div>
+                    <label for="status">Статус:</label>
+                    <input type="text" id="status" name="status" disabled value="Новый">
+                </div>
+                <input type="submit" value="Добавить" class="add-btn">
+            </form>
+        </div>
+    </div>
     <table>
-        <tr>
+        <tr class="th-table">
             <td>Фамилия</td>
             <td>Имя</td>
             <td>Отчество</td>
