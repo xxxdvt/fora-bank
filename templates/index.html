@@ -26,23 +26,23 @@
             <form action="/add" class="add-form" method="post">
                 <div>
                     <label for="surname">Фамилия:</label>
-                    <input type="text" id="surname" name="surname">
+                    <input type="text" id="surname" name="surname" required>
                 </div>
                 <div>
                     <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div>
                     <label for="fathername">Отчество:</label>
-                    <input type="text" id="fathername" name="fathername">
+                    <input type="text" id="fathername" name="fathername" required>
                 </div>
                 <div>
                     <label for="phone_number">Телефон:</label>
-                    <input type="text" id="phone_number" name="phone_number">
+                    <input type="text" id="phone_number" name="phone_number" required>
                 </div>
                 <div>
                     <label for="office">Офис:</label>
-                    <select id="office" name="office">
+                    <select id="office" name="office" required>
                         {% for office in offices %}
                             <option value="{{ office.Office }}">{{ office.Office }}</option>
                         {% endfor %}
@@ -50,11 +50,11 @@
                 </div>
                 <div>
                     <label for="date">Дата:</label>
-                    <input type="date" id="date" name="date">
+                    <input type="date" id="date" name="date" required>
                 </div>
                 <div>
                     <label for="time">Время:</label>
-                    <select id="time" name="time"></select>
+                    <select id="time" name="time" required></select>
                 </div>
                 <div>
                     <label for="status">Статус:</label>

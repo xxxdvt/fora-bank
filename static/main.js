@@ -1,14 +1,11 @@
 document.querySelector('.open-form').addEventListener('click', () => {
-   document.querySelector('.form--form').classList.remove('hidden');
+    document.querySelector('.form--form').classList.remove('hidden');
 });
 
-const closeForm = () => {
-   document.querySelector('.form--form').classList.add('hidden');
-};
 
-document.querySelector('.close-form').addEventListener('click', closeForm);
-document.querySelector('.add-btn').addEventListener('click', closeForm);
-
+document.querySelector('.close-form').addEventListener('click', () => {
+    document.querySelector('.form--form').classList.add('hidden');
+});
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -103,28 +100,28 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({status: newStatus}),
         })
             .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.success) {
-                        console.log('Статус успешно обновлен');
-                        if (newStatus !== 'Новый') {
-                            const reqRow = document.querySelector(`.req-${reqId}`);
-                            console.log(reqRow);
-                            if (reqRow) {
-                                reqRow.remove();
-                            }
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    console.log('Статус успешно обновлен');
+                    if (newStatus !== 'Новый') {
+                        const reqRow = document.querySelector(`.req-${reqId}`);
+                        console.log(reqRow);
+                        if (reqRow) {
+                            reqRow.remove();
                         }
-                    } else {
-                        console.error('Ошибка обновления статуса');
                     }
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+                } else {
+                    console.error('Ошибка обновления статуса');
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     updateAvailableDates();
