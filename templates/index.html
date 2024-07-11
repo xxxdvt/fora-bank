@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
     <title>Title</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
@@ -12,11 +13,31 @@
     <img src="../static/img/header-logo.svg" alt="" width="200px">
     <div class="buttons">
         <button class="open-form"><img src="../static/img/add.png" alt="" style="cursor: pointer;"></button>
-        <button class="to-excel"><img src="../static/img/export.png" alt="" style="cursor: pointer;"></button>
+        <a href="/export_to_excel">
+            <button class="to-excel"><img src="../static/img/export.png" alt="" style="cursor: pointer;"></button>
+        </a>
+        <a href="/main_work">
+            <button class="work_plan"><img src="../static/img/calendar.png" alt="" style="cursor: pointer;"></button>
+        </a>
+        <a href="/exceptions">
+            <button class="exceptions_plan"><img src="../static/img/exclamation.png" alt="" style="cursor: pointer;">
+            </button>
+        </a>
     </div>
 </header>
 
 <main>
+    <label for="atypical">
+        <input type="checkbox" id="atypical">
+        Нетиповой график работы
+    </label><br>
+    <label for="filter-office"></label>
+    <select id="filter-office">
+        <option value="">Все офисы</option>
+        {% for office in offices1 %}
+            <option value="{{ office.Office }}">{{ office.Office }}</option>
+        {% endfor %}
+    </select>
     <div class="form--form hidden">
         <div class="form-form">
             <div class="form-header">
@@ -64,17 +85,16 @@
             </form>
         </div>
     </div>
-    <table>
+    <table class="requests-table">
         <tr class="th-table">
             <td>Фамилия</td>
             <td>Имя</td>
             <td>Отчество</td>
             <td>Контакт</td>
             <td>Офис</td>
-            <td>Дата</td>
-            <td>Время</td>
+            <td onclick="sortTable(5)">Дата</td>
+            <td onclick="sortTable(6)">Время</td>
             <td>Статус</td>
-            <td></td>
         </tr>
         {% for request in requests %}
             <tr class="req-{{ request._id }}">
@@ -101,8 +121,6 @@
                         <input type="radio" class="status-radio no-ok" name="{{ request._id }}" value="Не прошла">
                         Не прошла
                     </label>
-                </td>
-                <td><a href="/edit/{{ request._id }}"><img src="../static/img/pencil.png" alt="" class="edit-btn"></a>
                 </td>
             </tr>
         {% endfor %}
