@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const enterKey = localStorage.getItem("keyEnter");
+    if (enterKey) {
+        document.querySelectorAll('.admin-funcs').forEach(elem => {
+           elem.classList.remove('hidden');
+        });
+    } else {
+        document.querySelectorAll('.admin-funcs').forEach(elem => {
+           elem.classList.add('hidden');
+        });
+    }
     const officeSelect = document.getElementById('office');
     const dateInput = document.getElementById('date');
     const timeSelect = document.getElementById('time');
@@ -196,7 +206,7 @@ function exportToExcel() {
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     rows.shift();
 
-     const data = rows.map(row => {
+    const data = rows.map(row => {
         // Проверяем стиль display у строки
         if (window.getComputedStyle(row).display !== 'none') {
             // Формируем массив данных для текущей видимой строки

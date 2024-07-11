@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="shortcut icon" href="../static/img/logo.png"/>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
-    <title>Title</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <title>Fora-Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <header>
@@ -16,17 +17,27 @@
         <a href="/export_to_excel">
             <button class="to-excel"><img src="../static/img/export.png" alt="" style="cursor: pointer;"></button>
         </a>
-        <a href="/main_work">
-            <button class="work_plan"><img src="../static/img/calendar.png" alt="" style="cursor: pointer;"></button>
-        </a>
-        <a href="/exceptions">
-            <button class="exceptions_plan"><img src="../static/img/exclamation.png" alt="" style="cursor: pointer;">
-            </button>
-        </a>
+        {% if not enter_key %}
+            <a href="/admin" class="admin-login">
+                <button class="admin-panel"><img src="../static/img/admin.png" alt="" style="cursor: pointer;"></button>
+            </a>
+        {% endif %}
+        {% if enter_key %}
+            <a href="/main_work" class="admin-funcs">
+                <button class="work_plan"><img src="../static/img/calendar.png" alt="" style="cursor: pointer;">
+                </button>
+            </a>
+            <a href="/exceptions" class="admin-funcs">
+                <button class="exceptions_plan"><img src="../static/img/exclamation.png" alt=""
+                                                     style="cursor: pointer;">
+                </button>
+            </a>
+        {% endif %}
     </div>
 </header>
 
 <main>
+
     <label for="atypical">
         <input type="checkbox" id="atypical">
         Нетиповой график работы
@@ -125,8 +136,7 @@
             </tr>
         {% endfor %}
     </table>
-
 </main>
-<script src="../static/main.js"></script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

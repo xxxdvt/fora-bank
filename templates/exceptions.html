@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents</title>
+    <link rel="shortcut icon" href="../static/img/logo.png"/>
+    <title>Exceptions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='work_style.css') }}">
 </head>
 <body>
 <div class="container">
     <a href="/">Back</a>
 
-    <h1>Documents</h1>
+    <h1>Exceptions</h1>
     <ul>
         {% for document in documents %}
             <li><a href="{{ url_for('get_document', document_id=document._id) }}">{{ document.office }}
@@ -18,7 +19,7 @@
         {% endfor %}
     </ul>
 
-    <h2>Add New Document</h2>
+    <h2>Add New Exception</h2>
     <form action="{{ url_for('add_document') }}" method="POST">
         <label for="office">Office Name:</label>
         <input type="text" id="office" name="office" required>
@@ -26,14 +27,14 @@
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required>
 
-        <h3>Excursion Time</h3>
+        <h3>Time</h3>
         <label for="start_time">Start Time:</label>
         <input type="time" id="start_time" name="start_time">
 
         <label for="end_time">End Time:</label>
         <input type="time" id="end_time" name="end_time">
 
-        <button type="submit">Add Document</button>
+        <button type="submit">Add Exception</button>
     </form>
 </div>
 </body>

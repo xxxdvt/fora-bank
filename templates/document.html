@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/logo.png"/>
     <title>{{ document.office }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='work_style.css') }}">
 </head>
@@ -17,7 +18,7 @@
         <li>End Time: {{ document.exc.end_time }}</li>
     </ul>
 
-    <h2>Edit Document</h2>
+    <h2>Edit Exception</h2>
     <form action="{{ url_for('update_document', document_id=document._id) }}" method="POST">
         <label for="office">Office Name:</label>
         <input type="text" id="office" name="office" value="{{ document.office }}" required>
@@ -32,7 +33,7 @@
         <label for="end_time">End Time:</label>
         <input type="time" id="end_time" name="end_time" value="{{ document.exc.end_time }}">
 
-        <button type="submit">Update Document</button>
+        <button type="submit">Update Exception</button>
     </form>
 
     <h2>Delete Document</h2>

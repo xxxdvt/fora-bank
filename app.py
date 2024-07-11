@@ -7,6 +7,8 @@ from pymongo import MongoClient
 
 HOST = "localhost"
 PORT = 27017
+USERNAME = "admin"
+PASSWORD = "forabank"
 
 client = MongoClient(HOST, PORT)
 db = client['admin']
@@ -14,6 +16,7 @@ reqs = db['requests']
 offices = db['work_main_plan']
 exceptions = db['work_plan_exceptions']
 app = Flask(__name__)
+enter_key = False
 
 
 @app.route('/')
@@ -22,7 +25,23 @@ def home_page():
     reqs_lst = reqs.find({"status": "Новый", 'date': {'$gte': today}})
     offices_lst = offices.find()
     offices_lst1 = offices.find()
-    return render_template('index.html', requests=reqs_lst, offices=offices_lst, offices1=offices_lst1)
+    return render_template('index.html', requests=reqs_lst, offices=offices_lst, offices1=offices_lst1,
+                           enter_key=enter_key)
+
+
+@app.route('/admin')
+def admin_login():
+    return render_template('login.html')
+
+
+@app.route('/check_data', methods=['POST'])
+def check_login():
+    login = request.form.get('username')
+    password = request.form.get('password')
+    if login == USERNAME and password == PASSWORD:
+        global enter_key
+        enter_key = True
+    return redirect(url_for('home_page'))
 
 
 @app.template_filter('format_date')
