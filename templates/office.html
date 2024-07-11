@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ office.Office }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='work_style.css') }}">
+</head>
+<body>
+<div class="container">
+    <a href="/">Back</a>
+
+    <h1>{{ office.Office }}</h1>
+    <ul>
+        {% for day, times in office.work_time.items() %}
+            <li>{{ day.capitalize() }}: Start - {{ times.start }}, End - {{ times.end }}, Break - {{ times.break }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Edit Office</h2>
+    <form action="{{ url_for('update_office', office_id=office._id) }}" method="POST">
+        <label for="Office">Office Name:</label>
+        <input type="text" id="Office" name="Office" value="{{ office.Office }}" required>
+        {% for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] %}
+            <h3>{{ day.capitalize() }}</h3>
+            <label for="{{ day }}_start">Start:</label>
+            <input type="time" id="{{ day }}_start" name="{{ day }}_start" value="{{ office.work_time[day].start }}">
+            <label for="{{ day }}_end">End:</label>
+            <input type="time" id="{{ day }}_end" name="{{ day }}_end" value="{{ office.work_time[day].end }}">
+            <label for="{{ day }}_break">Break:</label>
+            <input type="text" id="{{ day }}_break" name="{{ day }}_break" value="{{ office.work_time[day].break }}">
+        {% endfor %}
+        <button type="submit">Update Office</button>
+    </form>
+
+    <h2>Delete Office</h2>
+    <form action="{{ url_for('delete_office', office_id=office._id) }}" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="{{ url_for('main_work') }}">Back to list</a>
+</div>
+</body>
+</html>

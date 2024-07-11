@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/work_style.css">
+    <title>Offices</title>
 </head>
 <body>
-dfghjyutghjyughyg
+<div class="container">
+    <a href="/">Back</a>
+    <h1>Offices</h1>
+    <ul>
+        {% for office in offices %}
+            <li><a href="{{ url_for('get_office', office_id=office._id) }}">{{ office.Office }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add New Office</h2>
+    <form action="{{ url_for('add_office') }}" method="POST">
+        <label for="Office">Office Name:</label>
+        <input type="text" id="Office" name="Office" required>
+        {% for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] %}
+            <h3>{{ day.capitalize() }}</h3>
+            <label for="{{ day }}_start">Start:</label>
+            <input type="time" id="{{ day }}_start" name="{{ day }}_start">
+            <label for="{{ day }}_end">End:</label>
+            <input type="time" id="{{ day }}_end" name="{{ day }}_end">
+            <label for="{{ day }}_break">Break:</label>
+            <input type="text" id="{{ day }}_break" name="{{ day }}_break">
+        {% endfor %}
+        <button type="submit">Add Office</button>
+    </form>
+</div>
 </body>
 </html>

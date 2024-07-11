@@ -95,18 +95,100 @@ def export_to_excel():
 
 @app.route('/main_work')
 def main_work():
-    return render_template('main_work_plan.html')
+    offices_lst = offices.find()
+    return render_template('main_work_plan.html', offices=offices_lst)
+
+
+@app.route('/main_work/office/<office_id>')
+def get_office(office_id):
+    office = offices.find_one({"_id": ObjectId(office_id)})
+    return render_template('office.html', office=office)
+
+
+@app.route('/main_work/add_office', methods=['POST'])
+def add_office():
+    office_data = {
+        'Office': request.form.get('Office'),
+        'work_time': {
+            day: {
+                'start': request.form.get(f'{day}_start'),
+                'end': request.form.get(f'{day}_end'),
+                'break': request.form.get(f'{day}_break')
+            } for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+        }
+    }
+    offices.insert_one(office_data)
+    return redirect(url_for('main_work'))
+
+
+@app.route('/main_work/update_office/<office_id>', methods=['POST'])
+def update_office(office_id):
+    office_data = {
+        'Office': request.form.get('Office'),
+        'work_time': {
+            day: {
+                'start': request.form.get(f'{day}_start'),
+                'end': request.form.get(f'{day}_end'),
+                'break': request.form.get(f'{day}_break')
+            } for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+        }
+    }
+    print(office_data)
+    offices.update_one({'_id': ObjectId(office_id)}, {'$set': office_data})
+    return redirect(url_for('main_work'))
+
+
+@app.route('/main_work/delete_office/<office_id>', methods=['POST'])
+def delete_office(office_id):
+    offices.delete_one({'_id': ObjectId(office_id)})
+    return redirect(url_for('main_work'))
 
 
 @app.route('/exceptions')
-def main_work_plan():
-    return render_template('exceptions.html')
+def atypical_work():
+    excs = exceptions.find()
+    return render_template('exceptions.html', documents=excs)
+
+
+@app.route('/exceptions/document/<document_id>')
+def get_document(document_id):
+    document = exceptions.find_one({"_id": ObjectId(document_id)})
+    return render_template('document.html', document=document)
+
+
+@app.route('/exceptions/add_document', methods=['POST'])
+def add_document():
+    document_data = {
+        'office': request.form.get('office'),
+        'date': request.form.get('date'),
+        'exc': {
+            'start_time': request.form.get('start_time'),
+            'end_time': request.form.get('end_time')
+        }
+    }
+    exceptions.insert_one(document_data)
+    return redirect(url_for('atypical_work'))
+
+
+@app.route('/exceptions/update_document/<document_id>', methods=['POST'])
+def update_document(document_id):
+    document_data = {
+        'office': request.form.get('office'),
+        'date': request.form.get('date'),
+        'exc': {
+            'start_time': request.form.get('start_time'),
+            'end_time': request.form.get('end_time')
+        }
+    }
+    exceptions.update_one({'_id': ObjectId(document_id)}, {'$set': document_data})
+    return redirect(url_for('atypical_work'))
+
+
+@app.route('/exceptions/delete_document/<document_id>', methods=['POST'])
+def delete_document(document_id):
+    exceptions.delete_one({'_id': ObjectId(document_id)})
+    return redirect(url_for('atypical_work'))
 
 
 if __name__ == '__main__':
     app.run()
-
-# Подредактировать форму изменения записи
-# дизайн
-# Чекбокс "отражать предыдущие даты"
-# Выгрузка в Excel
