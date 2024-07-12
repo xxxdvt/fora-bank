@@ -1,0 +1,731 @@
+[{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869bd"
+  },
+  "Office": "Центральный офис",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "15:30",
+      "break": null
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869be"
+  },
+  "Office": "Дополнительный офис №3",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "21:00",
+      "break": "14:00-15:00"
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "21:00",
+      "break": "14:00-15:00"
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "21:00",
+      "break": "14:00-15:00"
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "21:00",
+      "break": "14:00-15:00"
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "21:00",
+      "break": "14:00-15:00"
+    },
+    "sat": {
+      "start": "10:00",
+      "end": "18:00",
+      "break": "14:00-15:00"
+    },
+    "sun": {
+      "start": "10:00",
+      "end": "18:00",
+      "break": "14:00-15:00"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869bf"
+  },
+  "Office": "Дополнительный офис №6",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "15:30",
+      "break": "None"
+    },
+    "sun": {
+      "start": "",
+      "end": "",
+      "break": "None"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c0"
+  },
+  "Office": "Дополнительный офис №7 \"Обнинский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "16:30",
+      "break": "13:00-13:30"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c1"
+  },
+  "Office": "Дополнительный офис №10 \"Малоярославецкий\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:30",
+      "end": "17:00",
+      "break": "13:00-13:30"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c2"
+  },
+  "Office": "Дополнительный офис №13 \"Балабановский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "None"
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "17:00",
+      "break": "13:00-14:00"
+    },
+    "sun": {
+      "start": "",
+      "end": "",
+      "break": "None"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c3"
+  },
+  "Office": "Дополнительный офис \"Тульский-4\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": "14:00-15:00"
+    },
+    "sun": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": "14:00-15:00"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c4"
+  },
+  "Office": "Дополнительный офис \"Наро-Фоминский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "13:00-14:00"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c5"
+  },
+  "Office": "Дополнительный офис \"Серпуховский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "18:00",
+      "break": "13:00-14:00"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c6"
+  },
+  "Office": "Дополнительный офис \"Подольский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sun": {
+      "start": "10:00",
+      "end": "15:30",
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "668c4fbdab9e043a5fa869c7"
+  },
+  "Office": "Дополнительный офис \"Балашиха\"",
+  "work_time": {
+    "mon": {
+      "start": "10:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "10:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "10:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "10:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "10:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "10:00",
+      "end": "18:00",
+      "break": null
+    },
+    "sun": {
+      "start": "10:00",
+      "end": "18:00",
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "6690388f433005bfa0703de2"
+  },
+  "Office": "Дополнительный офис \"Одинцовский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:30",
+      "end": "19:30",
+      "break": ""
+    },
+    "tue": {
+      "start": "09:30",
+      "end": "19:30",
+      "break": ""
+    },
+    "wed": {
+      "start": "09:30",
+      "end": "19:30",
+      "break": ""
+    },
+    "thu": {
+      "start": "09:30",
+      "end": "19:30",
+      "break": ""
+    },
+    "fri": {
+      "start": "09:30",
+      "end": "19:30",
+      "break": ""
+    },
+    "sat": {
+      "start": "10:00",
+      "end": "18:00",
+      "break": "14:00-15:00"
+    },
+    "sun": {
+      "start": "",
+      "end": "",
+      "break": ""
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "669048d5ab9e043a5fa869ed"
+  },
+  "Office": "Дополнительный офис \"Химки\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "18:00",
+      "break": "14:00-15:00"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "669048d5ab9e043a5fa869ee"
+  },
+  "Office": "Дополнительный офис \"Люберцы\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "18:00",
+      "break": null
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "669048d5ab9e043a5fa869ef"
+  },
+  "Office": "Дополнительный офис \"Коммунарка\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "18:00",
+      "break": null
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "669048d5ab9e043a5fa869f0"
+  },
+  "Office": "Дополнительный офис \"Домодедовский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "20:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "18:00",
+      "break": null
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "669048d5ab9e043a5fa869f1"
+  },
+  "Office": "Дополнительный офис \"Коломенский\"",
+  "work_time": {
+    "mon": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "tue": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "wed": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "thu": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "fri": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": null
+    },
+    "sat": {
+      "start": "09:00",
+      "end": "19:00",
+      "break": "14:00-15:00"
+    },
+    "sun": {
+      "start": null,
+      "end": null,
+      "break": null
+    }
+  }
+}]
