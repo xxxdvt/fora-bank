@@ -9,37 +9,37 @@
 </head>
 <body>
 <div class="container">
-    <a href="/">Back</a>
+    <a href="/">Назад</a>
 
     <h1>{{ office.Office }}</h1>
     <ul>
         {% for day, times in office.work_time.items() %}
-            <li>{{ day.capitalize() }}: Start - {{ times.start }}, End - {{ times.end }}, Break - {{ times.break }}</li>
+            <li>{{ ruDays[day] }}: Начало - {{ times.start }}, Конец - {{ times.end }}, Обед - {{ times.break }}</li>
         {% endfor %}
     </ul>
 
-    <h2>Edit Office</h2>
+    <h2>Редактировать офис</h2>
     <form action="{{ url_for('update_office', office_id=office._id) }}" method="POST">
-        <label for="Office">Office Name:</label>
+        <label for="Office">Название офиса:</label>
         <input type="text" id="Office" name="Office" value="{{ office.Office }}" required>
         {% for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] %}
-            <h3>{{ day.capitalize() }}</h3>
-            <label for="{{ day }}_start">Start:</label>
+            <h3>{{ ruDays[day] }}</h3>
+            <label for="{{ day }}_start">Начало:</label>
             <input type="time" id="{{ day }}_start" name="{{ day }}_start" value="{{ office.work_time[day].start }}">
-            <label for="{{ day }}_end">End:</label>
+            <label for="{{ day }}_end">Конец:</label>
             <input type="time" id="{{ day }}_end" name="{{ day }}_end" value="{{ office.work_time[day].end }}">
-            <label for="{{ day }}_break">Break:</label>
+            <label for="{{ day }}_break">Обед:</label>
             <input type="text" id="{{ day }}_break" name="{{ day }}_break" value="{{ office.work_time[day].break }}">
         {% endfor %}
-        <button type="submit">Update Office</button>
+        <button type="submit">Обновить офис</button>
     </form>
 
-    <h2>Delete Office</h2>
+    <h2>Удалить офис</h2>
     <form action="{{ url_for('delete_office', office_id=office._id) }}" method="POST">
-        <button type="submit">Delete</button>
+        <button type="submit">Удалить</button>
     </form>
 
-    <a href="{{ url_for('main_work') }}">Back to list</a>
+    <a href="{{ url_for('main_work') }}">Назад к списку</a>
 </div>
 </body>
 </html>

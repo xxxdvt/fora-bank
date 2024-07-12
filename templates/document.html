@@ -9,39 +9,39 @@
 </head>
 <body>
 <div class="container">
-    <a href="/">Back</a>
+    <a href="/">Назад</a>
 
     <h1>{{ document.office }}</h1>
-    <p>Date: {{ document.date }}</p>
+    <p>Дата: {{ document.date }}</p>
     <ul>
-        <li>Start Time: {{ document.exc.start_time }}</li>
-        <li>End Time: {{ document.exc.end_time }}</li>
+        <li>Начало: {{ document.exc.start_time }}</li>
+        <li>Конец: {{ document.exc.end_time }}</li>
     </ul>
 
-    <h2>Edit Exception</h2>
+    <h2>Редактировать исключение</h2>
     <form action="{{ url_for('update_document', document_id=document._id) }}" method="POST">
-        <label for="office">Office Name:</label>
+        <label for="office">Название офиса:</label>
         <input type="text" id="office" name="office" value="{{ document.office }}" required>
 
-        <label for="date">Date:</label>
+        <label for="date">Дата:</label>
         <input type="date" id="date" name="date" value="{{ document.date }}" required>
 
-        <h3>Time</h3>
-        <label for="start_time">Start Time:</label>
+        <h3>Время</h3>
+        <label for="start_time">Начало:</label>
         <input type="time" id="start_time" name="start_time" value="{{ document.exc.start_time }}">
 
-        <label for="end_time">End Time:</label>
+        <label for="end_time">Конец:</label>
         <input type="time" id="end_time" name="end_time" value="{{ document.exc.end_time }}">
 
-        <button type="submit">Update Exception</button>
+        <button type="submit">Обновить исключение</button>
     </form>
 
-    <h2>Delete Document</h2>
+    <h2>Удалить исключение</h2>
     <form action="{{ url_for('delete_document', document_id=document._id) }}" method="POST">
-        <button type="submit">Delete</button>
+        <button type="submit">Удалить</button>
     </form>
 
-    <a href="{{ url_for('atypical_work') }}">Back to list</a>
+    <a href="{{ url_for('atypical_work') }}">Назад к списку</a>
 </div>
 </body>
 </html>

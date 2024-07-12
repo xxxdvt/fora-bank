@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/work_style.css">
     <link rel="shortcut icon" href="../static/img/logo.png"/>
-    <title>Offices</title>
+    <title>Офисы</title>
 </head>
 <body>
 <div class="container">
-    <a href="/">Back</a>
-    <h1>Offices</h1>
+    <a href="/">Назад</a>
+    <h1>Офисы</h1>
     <ul>
         {% for office in offices %}
             <li><a href="{{ url_for('get_office', office_id=office._id) }}">{{ office.Office }}</a></li>
         {% endfor %}
     </ul>
 
-    <h2>Add New Office</h2>
+    <h2>Добавить новый офис</h2>
     <form action="{{ url_for('add_office') }}" method="POST">
-        <label for="Office">Office Name:</label>
+        <label for="Office">Название офиса:</label>
         <input type="text" id="Office" name="Office" required>
         {% for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] %}
-            <h3>{{ day.capitalize() }}</h3>
-            <label for="{{ day }}_start">Start:</label>
+            <h3>{{ ruDays[day] }}</h3>
+            <label for="{{ day }}_start">Начало:</label>
             <input type="time" id="{{ day }}_start" name="{{ day }}_start">
-            <label for="{{ day }}_end">End:</label>
+            <label for="{{ day }}_end">Конец:</label>
             <input type="time" id="{{ day }}_end" name="{{ day }}_end">
-            <label for="{{ day }}_break">Break:</label>
+            <label for="{{ day }}_break">Обед:</label>
             <input type="text" id="{{ day }}_break" name="{{ day }}_break">
         {% endfor %}
-        <button type="submit">Add Office</button>
+        <button type="submit">Добавить офис</button>
     </form>
 </div>
 </body>

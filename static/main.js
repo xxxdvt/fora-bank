@@ -1,14 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const enterKey = localStorage.getItem("keyEnter");
-    if (enterKey) {
-        document.querySelectorAll('.admin-funcs').forEach(elem => {
-           elem.classList.remove('hidden');
-        });
-    } else {
-        document.querySelectorAll('.admin-funcs').forEach(elem => {
-           elem.classList.add('hidden');
-        });
-    }
     const officeSelect = document.getElementById('office');
     const dateInput = document.getElementById('date');
     const timeSelect = document.getElementById('time');
@@ -90,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     flatpickr(dateInput, {
+        locale: "ru",
+        firstDayOfWeek: 1,
         minDate: 'today',
         maxDate: new Date().fp_incr(365),
         disable: getDisabledDates()

@@ -7,14 +7,21 @@ from pymongo import MongoClient
 
 HOST = "localhost"
 PORT = 27017
-USERNAME = "admin"
+
+DATABASE = 'admin'
+REQUESTS_COLLECTION = 'requests'
+OFFICES_COLLECTION = 'work_main_plan'
+EXCEPTIONS_COLLECTION = 'work_plan_exceptions'
+
+USERNAME = "forabank"
 PASSWORD = "forabank"
 
 client = MongoClient(HOST, PORT)
-db = client['admin']
-reqs = db['requests']
-offices = db['work_main_plan']
-exceptions = db['work_plan_exceptions']
+db = client[DATABASE]
+reqs = db[REQUESTS_COLLECTION]
+offices = db[OFFICES_COLLECTION]
+exceptions = db[EXCEPTIONS_COLLECTION]
+
 app = Flask(__name__)
 enter_key = False
 
@@ -112,16 +119,27 @@ def export_to_excel():
     return send_file(file_name, as_attachment=True)
 
 
+rus_days = {
+    'mon': 'Понедельник',
+    'tue': 'Вторник',
+    'wed': 'Среда',
+    'thu': 'Четверг',
+    'fri': 'Пятница',
+    'sat': 'Суббота',
+    'sun': 'Воскресенье'
+}
+
+
 @app.route('/main_work')
 def main_work():
     offices_lst = offices.find()
-    return render_template('main_work_plan.html', offices=offices_lst)
+    return render_template('main_work_plan.html', offices=offices_lst, ruDays=rus_days)
 
 
 @app.route('/main_work/office/<office_id>')
 def get_office(office_id):
     office = offices.find_one({"_id": ObjectId(office_id)})
-    return render_template('office.html', office=office)
+    return render_template('office.html', office=office, ruDays=rus_days)
 
 
 @app.route('/main_work/add_office', methods=['POST'])
